@@ -57,6 +57,7 @@ const setListeners = () => {
     document.getElementById("hardreset").addEventListener("click", () => {
         resetScore();
         resetGamepad();
+        setNotification("Press any button to begin.");
     });
 }
 
@@ -104,9 +105,21 @@ const checkWin = () => {
 
     for (i = 0; i < winConditions.length; i++) {
         if (game_pad[winConditions[i][0]] === letter && game_pad[winConditions[i][1]] === letter && game_pad[winConditions[i][2]] === letter) {
-            computer_turn ? computer_score++ : user_score++;
+            if (computer_turn) {
+                computer_score++;
+                setNotification("Computer Won.")
+            } else {
+                user_score++;
+                setNotification("User Won.")
+            }
             resetGamepad();
         }
+    }
+
+    // check for draw
+    if (!game_pad.includes("")) {
+        resetGamepad();
+        setNotification("Draw. Try Again.");
     }
 }
 
