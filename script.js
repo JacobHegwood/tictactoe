@@ -71,19 +71,30 @@ const startGame = () => {
 
 const nextTurn = () => {
     if (computer_turn === true) {
-        computerMove();
         computer_turn = false;
     } else {
         computer_turn = true;
+        computerMove();
     }
 }
 
 // computer move
+// I plan to use more sophisticated logic in the future, but for now let's just choose a random free button
 
 const computerMove = () => {
-    let next_move = undefined;
-    
-    return;
+    let next_move;
+    let available_buttons = [];
+
+    for (i = 0; i < game_pad.length; i++) {
+        if (game_pad[i] === "") {
+            available_buttons.push(i);
+        }
+    }
+
+    let calculation = Math.floor(Math.random() * available_buttons.length);
+    next_move = available_buttons[calculation];
+
+    buttonPress(next_move+1);
 }
 
 // check win conditions
@@ -138,6 +149,7 @@ const resetGamepad = () => {
                 "","",""];
     updateGamepad();
     updateScore();
+    computer_turn = false;
 }
 
 startGame();
