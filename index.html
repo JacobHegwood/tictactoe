@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="./style.css" rel="stylesheet" type="text/css" />
+
+    <script src="./script.js" defer></script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic Tac Toe</title>
+  </head>
+  
+  <body>
+    <main>
+      <h1>Tic Tac Toe</h1>
+      <p>Developed by Jacob Hegwood</p>
+      <div id="notification_box">Press any square to begin.</div>
+      <div id="gamepad">
+        <button id="gamepad_button_1" class="gamepad_button"></button>
+        <button id="gamepad_button_2" class="gamepad_button"></button>
+        <button id="gamepad_button_3" class="gamepad_button"></button>
+        <button id="gamepad_button_4" class="gamepad_button"></button>
+        <button id="gamepad_button_5" class="gamepad_button"></button>
+        <button id="gamepad_button_6" class="gamepad_button"></button>
+        <button id="gamepad_button_7" class="gamepad_button"></button>
+        <button id="gamepad_button_8" class="gamepad_button"></button>
+        <button id="gamepad_button_9" class="gamepad_button"></button>
+      </div>
+      <button id="hardreset">Reset Game</button>
+    </main>
+    <footer>
+      <h2>Score:</h2>
+      <div class="flex-container">
+        <div id="computer">
+          <h3>Computer:</h3>
+          <div class="score">0</div>
+        </div>
+        <div id="player">
+          <h3>User:</h3>
+          <div class="score">0</div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
